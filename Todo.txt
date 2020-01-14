@@ -1,0 +1,6 @@
+Lessons:
+-using parameters 
+-cascading parameters
+-lifecycle
+-dialog box
+-two ways binding

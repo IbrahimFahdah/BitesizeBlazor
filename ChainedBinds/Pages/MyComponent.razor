@@ -1,0 +1,18 @@
+﻿@page "/mycomponent"
+<h3>Binding a child property to a parent property</h3>
+
+<MyComponentChildOne @bind-Date="@DataObject.Instance.Date" />
+@if (DataObject.Instance.Date.HasValue)
+{
+    <div>@DataObject.Instance.Date.Value.ToString("dd/MM/yyyy")</div>
+}
+
+
+<button @onclick="()=> {
+                      Random gen = new Random();
+                      DateTime start = new DateTime(1995, 1, 1);
+    int range = (DateTime.Today - start).Days;
+    DataObject.Instance.Date= start.AddDays(gen.Next(range)); }">
+    Set Random date
+</button>
+

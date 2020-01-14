@@ -1,0 +1,9 @@
+﻿<h4>My Component child one</h4>
+<div>@ChildContent</div>
+@code {
+    /// <summary>
+    /// Note the name of the property matters
+    /// </summary>
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

@@ -1,0 +1,14 @@
+﻿@page "/mycomponent"
+<h3>My component!</h3>
+
+<MyComponentChildOne OnValueChanged="ValueChanged"/>
+<div>@childValue</div>
+
+    @code {
+        private string childValue { get; set; }
+
+        private void ValueChanged(string val)
+        {
+            childValue = val;
+        }
+    }

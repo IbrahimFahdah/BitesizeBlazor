@@ -1,0 +1,42 @@
+﻿<fieldset>
+    <legend>My Component child one</legend>
+    <input type="date" value="@(Date?.ToString(dateFormat))" @onchange="OnDateChanged">
+    <button @onclick="Revert">Revert</button>
+</fieldset>
+
+@code {
+
+    private string dateFormat = "yyyy-MM-dd";
+    public DateTime? originalDate;
+
+    [Parameter]
+    public DateTime? Date { get; set; }
+
+    /// <summary>
+    /// must have the same name as the binded property so 
+    /// </summary>
+    [Parameter]
+    public EventCallback<DateTime?> DateChanged { get; set; }
+
+    private async Task Revert()
+    {
+        if (Date != originalDate)
+        {
+            Date = originalDate;
+            await DateChanged.InvokeAsync(originalDate);
+        }
+    }
+
+    private async Task OnDateChanged(ChangeEventArgs e)
+    {
+        var date = (string)e.Value;
+        var newDate = DateTime.Parse(date);
+        Date = newDate;
+        await DateChanged.InvokeAsync(newDate);
+    }
+
+    protected override void OnInitialized()
+    {
+        originalDate = Date;
+    }
+}

@@ -1,0 +1,12 @@
+﻿<fieldset >
+    <legend>My Component child one</legend>
+    <label>Enter text to pass to parent component:</label>
+    <input @oninput="@((e)=> { OnValueChanged.InvokeAsync((string)e.Value); })">
+</fieldset>
+
+@code {
+
+    [Parameter]
+    public EventCallback<string> OnValueChanged { get; set; }
+
+}

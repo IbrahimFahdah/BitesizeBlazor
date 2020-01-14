@@ -1,0 +1,25 @@
+﻿@page "/mycomponent"
+<h3>My component!</h3>
+<div>
+    @* Ways to bind to events and pass parameters *@
+    <button @onmouseover="@(ev => onmouseover(ev, "button 1"))" @onmouseout="@(()=>{ buttonName = ""; })">Button 1</button>
+    <button @onmouseover="@(ev => buttonName = "button 2")" @onmouseout="@(()=>{ buttonName = ""; })">Button 2</button>
+    <button @onmouseover="@(()=>buttonName = "button 3")" @onmouseout="@(()=>{ buttonName = ""; })">Button 3</button>
+    <button @onmouseover="@(()=>onmouseover("button 4"))" @onmouseout="@(()=>{ buttonName = ""; })">Button 4</button>
+
+</div>
+<div>@buttonName</div>
+
+@code {
+
+    private string buttonName;
+    private void onmouseover(MouseEventArgs e, string btName)
+    {
+        buttonName = btName;
+    }
+
+    private void onmouseover(string btName)
+    {
+        buttonName = btName;
+    }
+}

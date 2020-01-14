@@ -1,0 +1,22 @@
+﻿@page "/mycomponent"
+<h3>My component!</h3>
+
+<div>
+    <label>two way binding using event</label>
+    <input type="checkbox" checked="@isCheckBoxTicked" @onchange="e => CheckboxChanged(e)" />
+</div>
+<div>
+    <label>two way binding using bind attribute</label>
+    <input type="checkbox" @bind="@isCheckBoxTicked"  />
+</div>
+<did>
+    Box is @(isCheckBoxTicked ? "ticked" : "unticked")
+</did>
+@code {
+
+    private bool isCheckBoxTicked;
+    private void CheckboxChanged(ChangeEventArgs e)
+    {
+        isCheckBoxTicked = (bool)e.Value;
+    }
+}
