@@ -1,6 +1,6 @@
-Lessons:
--using parameters 
+To add:
 -cascading parameters
 -lifecycle
--dialog box
--two ways binding
+-dialogs
+
+
