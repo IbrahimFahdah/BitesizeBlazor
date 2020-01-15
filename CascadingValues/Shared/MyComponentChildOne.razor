@@ -1,0 +1,14 @@
+﻿<fieldset>
+    <legend>My Component child one</legend>
+    <div>
+        <button class="@Theme.btClass">Button</button>
+    </div>
+</fieldset>
+
+
+@code {
+
+    [CascadingParameter]
+    public Theme Theme { get; set; }
+
+}

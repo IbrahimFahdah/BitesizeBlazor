@@ -1,6 +1,9 @@
 To add:
--cascading parameters
 -lifecycle
 -dialogs
+-using forms and editfroms
+-templates
+-passing objects between components
+-using API controllers
 
 

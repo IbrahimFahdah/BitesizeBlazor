@@ -1,0 +1,24 @@
+﻿@page "/mycomponent"
+<h3>My component!</h3>
+
+<input type="checkbox" @onchange="OnValueChanged">Toggle button theme
+
+@* https://chrissainty.com/understanding-cascading-values-and-cascading-parameters/
+On the CascadingValue component there is a IsFixed parameter. It is set to false by default but if you set it to true you are telling Blazor to not monitor it for changes.
+There has been a bit of confusion when it comes to updating cascading values.
+The important thing to understand is that updates only cascade down you can't update a value from a descendant.*@
+<CascadingValue Value="Theme" IsFixed="false">
+    <MyComponentChildOne />
+</CascadingValue>
+
+
+
+@code {
+
+    private Theme Theme = new Theme();
+
+    private void OnValueChanged()
+    {
+        Theme.ToggleTheme();
+    }
+}
