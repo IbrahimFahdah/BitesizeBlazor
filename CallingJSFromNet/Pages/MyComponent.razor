@@ -1,0 +1,16 @@
+﻿@page "/mycomponent"
+@inject IJSRuntime js
+
+
+<h3>My component!</h3>
+
+<button @onclick="@((ev) => DownloadFile())">download file</button>
+
+
+@code {
+    async Task DownloadFile()
+    {
+        var bytes = System.Text.Encoding.ASCII.GetBytes("Hello World!");;
+        await FileUtil.DownloadFile(js, "data.txt", bytes);
+    }
+}
