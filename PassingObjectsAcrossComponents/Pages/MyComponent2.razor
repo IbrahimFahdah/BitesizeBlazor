@@ -1,0 +1,26 @@
+﻿@page "/mycomponent2"
+@inject AppState AppState
+
+<h3>Component 2</h3>
+
+<MyComponentChild/>
+
+<div>
+    @*When Property B is changed on the child component, StateHasChanged will be called and the value of Property C will be refreshed.*@
+    @AppState.obj.PropertyC
+</div>
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        AppState.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        AppState.OnChange -= StateHasChanged;
+    }
+
+
+}

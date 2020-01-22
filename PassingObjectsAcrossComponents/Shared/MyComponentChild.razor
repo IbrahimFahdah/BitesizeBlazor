@@ -1,0 +1,13 @@
+﻿
+@inject AppState AppState
+<div>
+    <label>Complex object property A:</label>
+    <input type="text" @bind="@AppState.obj.PropertyA" />
+</div>
+<div>
+    <label>Complex object property B:</label>
+    <input type="text" @bind="@AppState.obj.PropertyB" />
+</div>
+@code {
+
+}

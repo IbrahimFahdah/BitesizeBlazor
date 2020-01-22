@@ -24,6 +24,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChainedBinds", "ChainedBind
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CascadingValues", "CascadingValues\CascadingValues.csproj", "{47CAD632-5712-4E42-9BEE-F8987556408D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassingObjectsAcrossComponents", "PassingObjectsAcrossComponents\PassingObjectsAcrossComponents.csproj", "{8C2DCB48-56FE-4D91-AFD4-6A48A821E352}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{47CAD632-5712-4E42-9BEE-F8987556408D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47CAD632-5712-4E42-9BEE-F8987556408D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47CAD632-5712-4E42-9BEE-F8987556408D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C2DCB48-56FE-4D91-AFD4-6A48A821E352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C2DCB48-56FE-4D91-AFD4-6A48A821E352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C2DCB48-56FE-4D91-AFD4-6A48A821E352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C2DCB48-56FE-4D91-AFD4-6A48A821E352}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

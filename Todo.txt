@@ -3,7 +3,6 @@ To add:
 -dialogs
 -using forms and editfroms
 -templates
--passing objects between components
 -using API controllers
 
 
