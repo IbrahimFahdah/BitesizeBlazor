@@ -1,0 +1,30 @@
+﻿@page "/mycomponent"
+@page "/mycomponent/{id:int}"
+@inject NavigationManager navManager
+
+<h3>My component!</h3>
+@if (id != null)
+{
+    <div>Passed value is @id</div>
+}
+@code {
+
+    [Parameter]
+    public int? id { get; set; }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var uri = navManager.ToAbsoluteUri(navManager.Uri);
+
+            if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("id", out var token))
+            {
+                id =int.Parse(token.First());
+            }
+
+            StateHasChanged();
+
+        }
+    }
+}
