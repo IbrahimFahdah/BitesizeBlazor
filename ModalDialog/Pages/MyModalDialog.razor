@@ -1,0 +1,55 @@
+﻿
+@if (ShowDialog)
+{
+
+    <div class="modal fade show d-block">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Demo</h5>
+                    <button type="button" class="close" @onclick="Cancel">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <label>modal data:</label>
+                        <input type="text" @bind="@value" />
+                    </div>
+                    <a class="btn btn-primary" @onclick="@Cancel">Cancel</a>
+                    <a class="btn btn-primary" @onclick="@Apply">Apply</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@code {
+
+    public bool ShowDialog { get; set; }
+
+    private string value { get; set; }
+
+    [Parameter]
+    public EventCallback<string> ApplyEventCallback { get; set; }
+
+    public void Show()
+    {
+        ShowDialog = true;
+        StateHasChanged();
+    }
+
+    public void Cancel()
+    {
+        ShowDialog = false;
+        StateHasChanged();
+    }
+
+    protected async Task Apply()
+    {
+        ShowDialog = false;
+
+        await ApplyEventCallback.InvokeAsync(value);
+
+        StateHasChanged();
+    }
+}

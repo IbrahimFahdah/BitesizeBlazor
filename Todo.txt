@@ -1,6 +1,5 @@
 To add:
 -lifecycle
--dialogs
 -using forms and editfroms
 -templates
 -using API controllers

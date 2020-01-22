@@ -1,0 +1,27 @@
+﻿@page "/mycomponent"
+<h3>My component!</h3>
+
+<button @onclick="ShowDialog">Show dialog</button>
+
+
+<MyModalDialog @ref="MyDialog" ApplyEventCallback="@OnMyDialogApply"></MyModalDialog>
+
+<div>
+    <label>modal data: @value</label>
+</div>
+
+@code {
+
+    public MyModalDialog MyDialog { get; set; }
+    private string value { get; set; }
+
+    protected void ShowDialog()
+    {
+        MyDialog.Show();
+    }
+
+    public void OnMyDialogApply(string val)
+    {
+        value = val;
+    }
+}
